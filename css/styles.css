@@ -1,0 +1,133 @@
+body, html {
+	width: 100%;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+header, footer {
+	display: flex;
+	flex-direction: column;
+	background-image: linear-gradient( 109.6deg, rgba(254, 87, 98, 1) 11.2%, rgba(255, 107, 161, 1) 99.1%);
+	padding: 50px;
+	color: #FFFFFF;
+}
+header {
+	top: 0;
+	position: sticky;
+	align-items: center;
+	height: 150px;
+}
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	gap: 20px;
+	font-size: 1.3em;
+}
+nav a {
+	color: white!Important;
+	text-decoration: none;
+}
+footer a {
+	color: white!Important;
+}
+footer {
+	position: relative;
+	gap: 15px;
+}
+footer ul {
+	padding-inline-start: 18px;
+}
+div#infoSections {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}
+div#leftSection, div#centerSection, div#rightSection {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+p#copyright {
+	position: relative;
+	font-weight: bold;
+	align-self: center;
+}
+article {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 50px;
+	min-height: calc(100vh - 350px);
+}
+article:nth-child(1) {
+	background-image: linear-gradient( 179.4deg, rgba(33, 150, 243, 1) 1.8%, rgba(22, 255, 245, 0.60) 97.1%);
+	color: white;
+}
+article:nth-child(3) {
+	background-image: linear-gradient( 109.6deg, rgba(255, 219, 47, 1) 11.2%, rgba(244, 253, 0, 1) 100.2%);
+	color: black;
+}
+nav>a.active {
+	text-decoration: underline;
+	font-weight: bold;
+}
+article>strong {
+	opacity: 0;
+	font-size: 5em;
+}
+article>p {
+	opacity: 0;
+	font-size: 2em;
+}
+article.active strong {
+	opacity: 1;
+}
+article.active p {
+	opacity: 1;
+}
+.titleEnter {
+	animation: titleEnterAnim ease-in 0.5s;
+}
+.contentEnter {
+	animation: contentEnterAnim ease-in 0.5s;
+}
+.titleExit {
+	animation: titleEnterAnim ease-out 0.5s reverse;
+}
+.contentExit {
+	animation: contentEnterAnim ease-out 0.5s reverse;
+}
+@keyframes titleEnterAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(-200px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+@keyframes contentEnterAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+@media only screen and (max-width: 576px) {
+	div#infoSections {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	div#infoSections ul {
+		list-style-type: none;
+	}
+}
